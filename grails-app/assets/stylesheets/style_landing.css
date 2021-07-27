@@ -1,0 +1,227 @@
+body{
+    background-color: antiquewhite;
+}
+#login{
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2%;
+    width: 250px;
+    float:left;
+    height:200px;
+    padding-bottom: 10px;
+    margin:50px;
+
+
+
+}
+#loginform{
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+
+
+}
+#loginheader{
+    background-color: indianred;
+    width: 245px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+
+
+}
+#frgotpasswrd{
+    padding-right: 20px;
+}
+#searchbox{
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 10px;
+    margin-right:10px;
+    margin-bottom:10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 10px;
+    background-color: indianred;
+}
+#appname{
+    font-size: 20px;
+}
+#box{
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 800px;
+}
+#Register{
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2%;
+    width: 250px;
+    height:500px;
+    position:absolute;
+    top:350px;
+    margin:50px;
+
+
+
+
+}
+#registerheader{
+    background-color: indianred;
+    width: 245px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+
+
+
+}
+#registerform{
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+
+}
+#RecentSharesposts{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2%;
+    width:300px;
+    margin-left: 95px;
+    height:525px;
+    float:left;
+    margin-top:20px;
+
+
+
+
+}
+#RecentSharespic{
+    vertical-align: top;
+    display: inline;
+    padding-left:75px;
+    padding-right:75px;
+    height: 150px;
+    padding-top:20px;
+
+
+}
+#Recentpostinfo{
+
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+
+
+}
+#Recentname{
+    display:inline;
+    padding-left:105px;
+
+
+
+}
+#Recentusername{
+    display:inline;
+    padding-left:105px;
+
+
+}
+
+#Recenttopicname{
+    padding-left:10px;
+
+}
+#Recentviewpost{
+    padding-left:10px;
+
+}
+#Recentshareot{
+    padding-left:110px;
+
+}
+#Recentshareheader{
+    background-color: indianred;
+    width: 295px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+
+
+
+}
+#topshareposts{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2%;
+    width:300px;
+    margin-left: 95px;
+    height:525px;
+    float:left;
+
+
+
+
+
+}
+#topSharespic{
+    vertical-align: top;
+    display: inline;
+    padding-left:75px;
+    padding-right:75px;
+    height: 150px;
+    padding-top:20px;
+
+
+}
+#toppostinfo{
+
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+
+
+}
+#topname{
+    display:inline;
+    padding-left:105px;
+
+
+
+}
+#topusername{
+    display:inline;
+    padding-left:105px;
+
+
+}
+
+#toptopicname{
+    padding-left:10px;
+
+}
+#topviewpost{
+    padding-left:10px;
+
+}
+#topshareot{
+    padding-left:110px;
+
+}
+#topshareheader{
+    background-color: indianred;
+    width: 295px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+
+
+
+}

@@ -1,0 +1,159 @@
+body{
+    background-color: antiquewhite;
+}
+#box{
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 650px;
+}
+#searchbox{
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 10px;
+    margin-right:10px;
+    margin-bottom:10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 10px;
+    background-color: indianred;
+}
+.dropbtn{
+    cursor:pointer;
+    color:black;
+    padding:5px;
+    background-color: indianred;
+    border:none;
+    font-size:16px;
+
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content{
+    display:none;
+    position:absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover{
+    background-color:white;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: orangered;
+}
+#Topic_info{
+    width :350px;
+    float: left;
+    display:inline;
+    border: 3px solid indianred;
+    padding:20px;
+
+    position: absolute;
+    top:115px;
+    left:650px;
+
+
+}
+#Topic_info img{
+    float:left;
+
+}
+#Topicheader{
+    background-color: indianred;
+    width: 391px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+    position: absolute;
+    top:90px;
+    left:650px;
+
+
+}
+.profile img{
+    float:left;
+}
+#Profileheader{
+    background-color: indianred;
+    width: 391px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+    position: absolute;
+    top:325px;
+    left:20px;
+
+
+}
+
+.profile{
+    width :350px;
+    float: left;
+    display:inline;
+    border: 3px solid indianred;
+    padding:20px;
+
+    position: absolute;
+    top:350px;
+    left:20px;
+
+
+
+}
+.posts{
+    width :550px;
+    float: left;
+    padding:10px;
+}
+.posts_info{
+    width: 550px;
+    border:3px solid indianred;
+
+    padding: 10px;
+
+}
+.posts_info img{
+    width: 100px;
+
+    padding:5px;
+    float:left;
+
+}
+.posts_info .heading{
+    width :30%;
+    padding:0 5px;
+    float:left;
+
+
+}
+.posts_info .text{
+    width :30%;
+    padding:0 5px;
+
+
+
+}
+#postsheader{
+    background-color: indianred;
+    width: 571px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+
+
+
+}

@@ -1,0 +1,327 @@
+body{
+    background-color: antiquewhite;
+}
+.inbox{
+    width :550px;
+    float: left;
+    padding:10px;
+}
+.inbox_info{
+   width: 550px;
+    border:3px solid indianred;
+
+    padding: 10px;
+
+}
+.inbox_info img{
+    width: 100px;
+
+    padding:5px;
+    float:left;
+
+}
+.inbox_info .heading{
+    width :30%;
+    padding:0 5px;
+    float:left;
+
+
+}
+ .inbox_info .text{
+      width :30%;
+      padding:0 5px;
+
+
+
+  }
+p{
+    margin:10px;
+}
+a{
+    display:inline;
+
+    padding:5px;
+}
+#inboxheader{
+    background-color: indianred;
+    width: 571px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+
+
+
+}
+#box{
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 650px;
+}
+#searchbox{
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 10px;
+    margin-right:10px;
+    margin-bottom:10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 10px;
+    background-color: indianred;
+}
+.dropbtn{
+    cursor:pointer;
+    color:black;
+    padding:5px;
+    background-color: indianred;
+    border:none;
+    font-size:16px;
+
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content{
+    display:none;
+    position:absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover{
+    background-color:white;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: orangered;
+}
+.profile img{
+    float:left;
+}
+
+.profile{
+    width :350px;
+    float: left;
+    display:inline;
+    border: 3px solid indianred;
+    padding:20px;
+    border-radius:10px;
+    position: absolute;
+    top:90px;
+    left:650px;
+
+
+
+}
+#Username{
+    font-size:25px;
+}
+#sharelinkform{
+    border: 3px solid indianred;
+    width:350px;
+    position:absolute;
+    top:400px;
+    left:600px;
+    display:none;
+    pointer-events:none;
+
+}
+
+#sharelinkheader{
+    background-color: indianred;
+    width: 345px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+
+}
+#linkform{
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:15px;
+    padding-top:15px;
+}
+.form-button{
+    margin:10px;
+    padding:5px;
+
+
+}
+#sharedocform{
+    border: 3px solid indianred;
+    width:350px;
+    position:absolute;
+    top:400px;
+    left:600px;
+    display:none;
+    pointer-events:none;
+
+}
+
+#sharedocheader{
+    background-color: indianred;
+    width: 345px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+
+}
+#docform{
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:15px;
+    padding-top:15px;
+}
+#insertdoc{
+    display:inline;
+}
+.form-button{
+    margin:10px;
+    padding:5px;
+
+
+}
+#subscription{
+    position: absolute;
+    top:325px;
+    left:20px;
+}
+.subscription_info{
+    width :350px;
+    float: left;
+    display:inline;
+    border: 3px solid indianred;
+    padding:20px;
+
+
+
+
+}
+#subscription_info img{
+    float:left;
+
+}
+#subscriptionheader{
+    background-color: indianred;
+    width: 391px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+    position: absolute;
+    top:300px;
+    left:20px;
+
+
+}
+#trending{
+    position: absolute;
+    top:1275px;
+    left:20px;
+
+
+
+
+}
+.trending_info{
+    width :350px;
+    float: left;
+    display:inline;
+    border: 3px solid indianred;
+    padding:20px;
+
+
+
+
+}
+#trending_info img{
+    float:left;
+
+}
+#trendingheader{
+    background-color: indianred;
+    width: 391px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+    position: absolute;
+    top:1250px;
+    left:20px;
+
+
+}
+#createtopic{
+
+    border: 3px solid indianred;
+    width:350px;
+    position:absolute;
+    top:400px;
+    left:600px;
+    display:none;
+    pointer-events:none;
+
+}
+
+#createtopicheader{
+
+    background-color: indianred;
+    width: 345px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+
+}
+#createtopicform{
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:15px;
+    padding-top:15px;
+}
+#topicname{
+    display:inline;
+}
+#sendinvitation{
+
+    border: 3px solid indianred;
+    width:350px;
+    position:absolute;
+    top:400px;
+    left:600px;
+    display:none;
+    pointer-events:none;
+
+}
+
+#sendinvitationheader{
+
+    background-color: indianred;
+    width: 345px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+
+}
+#sendinvitationform{
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:15px;
+    padding-top:15px;
+}
+#email{
+    display:inline;
+}
+
