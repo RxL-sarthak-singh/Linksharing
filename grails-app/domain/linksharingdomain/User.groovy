@@ -8,11 +8,12 @@ class User {
     String firstName
     String lastName
     String confirmPassword
-    byte photo
+    boolean active = true
     boolean admin
     Date dateCreated
     Date lastUpdated
     static transients = ["confirmPassword"]
+    String photo;
     static hasMany = [topics:Topic,subscriptions:Subscription,resources:Resource,readingItems:ReadingItem]
 //    resourceRating check
 

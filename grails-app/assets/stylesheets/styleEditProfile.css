@@ -1,0 +1,292 @@
+
+body{
+    background-color: antiquewhite;
+}
+.dropbtn{
+    cursor:pointer;
+    color:black;
+    padding:5px;
+    background-color: indianred;
+    border:none;
+    font-size:16px;
+
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content{
+    display:none;
+    position:absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover{
+    background-color:white;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: orangered;
+}
+#box{
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 650px;
+}
+#searchbox{
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 10px;
+    margin-right:10px;
+    margin-bottom:10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 10px;
+    background-color: indianred;
+}
+#sharelinkform{
+    border: 3px solid indianred;
+    width:350px;
+    position:absolute;
+    top:400px;
+    left:600px;
+    display:none;
+    pointer-events:none;
+
+}
+
+#sharelinkheader{
+    background-color: indianred;
+    width: 345px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+
+}
+#linkform{
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:15px;
+    padding-top:15px;
+}
+.form-button{
+    margin:10px;
+    padding:5px;
+
+
+}
+#sharedocform{
+    border: 3px solid indianred;
+    width:350px;
+    position:absolute;
+    top:400px;
+    left:600px;
+    display:none;
+    pointer-events:none;
+
+}
+
+#sharedocheader{
+    background-color: indianred;
+    width: 345px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+
+}
+#docform{
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:15px;
+    padding-top:15px;
+}
+#insertdoc{
+    display:inline;
+}
+#createtopic{
+
+    border: 3px solid indianred;
+    width:350px;
+    position:absolute;
+    top:400px;
+    left:600px;
+    display:none;
+    pointer-events:none;
+
+}
+
+#createtopicheader{
+
+    background-color: indianred;
+    width: 345px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+
+}
+#createtopicform{
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:15px;
+    padding-top:15px;
+}
+#sendinvitation{
+
+    border: 3px solid indianred;
+    width:350px;
+    position:absolute;
+    top:400px;
+    left:600px;
+    display:none;
+    pointer-events:none;
+
+}
+
+#sendinvitationheader{
+
+    background-color: indianred;
+    width: 345px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+
+}
+#sendinvitationform{
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:15px;
+    padding-top:15px;
+}
+#appname{
+    font-size: 20px;
+}
+#changepassword{
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2%;
+    width: 250px;
+    height:200px;
+    position:absolute;
+    top:400px;
+    margin:50px;
+
+
+
+
+}
+#changepasswordheader{
+    background-color: indianred;
+    width: 245px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+
+
+
+}
+#changepasswordform{
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+
+}
+#editprofile{
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2%;
+    width: 250px;
+    float:left;
+    height:300px;
+    padding-bottom: 10px;
+    margin:50px;
+
+
+
+}
+#editprofileform{
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+
+
+}
+#editprofileheader{
+    background-color: indianred;
+    width: 245px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+
+
+}
+.profile img{
+    float:left;
+}
+
+.profile{
+    width :350px;
+    float: left;
+    display:inline;
+    border: 3px solid indianred;
+    padding:20px;
+    border-radius:10px;
+    position: absolute;
+    top:90px;
+    left:650px;
+
+
+
+}
+#Topics{
+    width :350px;
+    float: left;
+    display:inline;
+    border: 3px solid indianred;
+    padding:20px;
+
+    position: absolute;
+    top:325px;
+    left:650px;
+
+
+}
+#Topics_info img{
+    float:left;
+
+}
+#Topicsheader{
+    background-color: indianred;
+    width: 391px;
+    height:25px;
+    padding-top: 5px;
+    padding-left: 5px;
+    position: absolute;
+    top:300px;
+    left:650px;
+
+
+}
+#topicbox{
+    height: 15px;
+    border-radius: 5px;
+
+}

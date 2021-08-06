@@ -8,7 +8,7 @@ body{
     border-radius: 2%;
     width: 250px;
     float:left;
-    height:200px;
+    height:230px;
     padding-bottom: 10px;
     margin:50px;
 
@@ -90,12 +90,15 @@ body{
 #RecentSharesposts{
     border-style: solid;
     border-width: 1px;
-    border-radius: 2%;
+
     width:300px;
-    margin-left: 95px;
+
     height:525px;
     float:left;
-    margin-top:20px;
+
+    position:absolute;
+    top:200px;
+    left:400px;
 
 
 
@@ -147,30 +150,43 @@ body{
 }
 #Recentshareheader{
     background-color: indianred;
-    width: 295px;
+    width: 298px;
     height:25px;
     padding-top: 5px;
     padding-left: 5px;
+    position:absolute;
+
+    top:170px;
+    left:400px;
 
 
 
 
 }
-#topshareposts{
+#topshares{
+    float:left;
+    position:absolute;
+    top:200px;
+    left:800px;
+
+}
+.topshareposts{
     border-style: solid;
     border-width: 1px;
-    border-radius: 2%;
+    /*-moz-border-radius-bottomleft: 2%;*/
+    /*-moz-border-radius-bottomright:2% ;*/
     width:300px;
-    margin-left: 95px;
-    height:525px;
-    float:left;
+
+
+    /*float:left;*/
+
 
 
 
 
 
 }
-#topSharespic{
+.topSharespic{
     vertical-align: top;
     display: inline;
     padding-left:75px;
@@ -180,7 +196,7 @@ body{
 
 
 }
-#toppostinfo{
+.toppostinfo{
 
     padding-left: 20px;
     padding-right: 20px;
@@ -188,25 +204,25 @@ body{
 
 
 }
-#topname{
+.topname{
     display:inline;
     padding-left:105px;
 
 
 
 }
-#topusername{
+.topusername{
     display:inline;
     padding-left:105px;
 
 
 }
 
-#toptopicname{
+.toptopicname{
     padding-left:10px;
 
 }
-#topviewpost{
+.topviewpost{
     padding-left:10px;
 
 }
@@ -216,10 +232,14 @@ body{
 }
 #topshareheader{
     background-color: indianred;
-    width: 295px;
+    width: 298px;
     height:25px;
     padding-top: 5px;
     padding-left: 5px;
+    position:absolute;
+    top:170px;
+    left:800px;
+
 
 
 

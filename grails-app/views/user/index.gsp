@@ -10,10 +10,17 @@
 <head>
     <asset:stylesheet src= "style_landing.css"></asset:stylesheet>
     <title>User Login</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <asset:javascript src="registerscript.js"></asset:javascript>
+    <script>
+    var dataurl = "${createLink(controller: 'user', action: 'registerUser')}"
+
+        </script>
 </head>
 
 
 <body>
+
 <h3 style ="background-color:green">${flash.success}</h3>
 <h3 style ="background-color:red">${flash.error}</h3>
 <div id ="searchbox">
@@ -25,7 +32,7 @@
     <div id = "loginheader">Login</div>
 
     <div id = "loginform">
-        <form action = "/user/loginUser">
+        <form action = "/user/loginUser" enctype="multipart/form-data">
 
             <label for = "mailid">Email</label>
             <br>
@@ -34,7 +41,7 @@
             <br>
             <label for = "password">Password</label>
             <br>
-            <input type="text" name = "password" id = "password" placeholder="Enter your password" >
+            <input type="password" name = "password" id = "password" placeholder="Enter your password" >
             <br>
             <br>
             <input type = "submit" value = "login">
@@ -46,8 +53,9 @@
 </div>
 <br>
 <br>
+<div id = "Recentshareheader">Recent Shares</div>
 <div id = "RecentSharesposts">
-    <div id = "Recentshareheader">Recent Shares</div>
+
     <img id = "RecentSharespic" src = "profile.png">
 
     <span id = "Recentname">sarthak singh</span>
@@ -71,23 +79,29 @@
 </div>
 <br>
 <br>
-<div id = "topshareposts">
-    <div id = "topshareheader">top posts
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<div id = "topshareheader">top posts
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
-        <select >
-            <option value="volvo">1 day</option>
-            <option value="saab">1 week</option>
-            <option value="mercedes">1 month</option>
-            <option value="audi">1 year</option>
-        </select>
+    <select >
+        <option value="volvo">1 day</option>
+        <option value="saab">1 week</option>
+        <option value="mercedes">1 month</option>
+        <option value="audi">1 year</option>
+    </select>
 
-    </div>
-    <img id = "topSharespic" src = "profile.png">
+</div>
 
-    <span id = "topname">sarthak singh</span>
+
+    <div id = "topshares">
+<g:each in = "${toppostlist}">
+<div class = "topshareposts">
+
+
+    <asset:image src = "${it.createdBy.photo}" class = "topSharespic" ></asset:image>
+
+    <span class = "topname">${it.topic.name}</span>
     <br>
-    <span id = "topusername">Sarthak@123</span>
+    <span class = "topusername">${it.createdBy.userName}</span>
     <br>
     <div id = "topshareot">
         <a href="#"><i class="fa fa-dribbble"></i></a>
@@ -96,21 +110,27 @@
         <a href="#"><i class="fa fa-facebook"></i></a>
     </div>
     <br>
-    <a id = "toptopicname" href = "www.google.com">Topic name</a>
+    <a class = "toptopicname" href = "www.google.com">${it.topic.name}</a>
     <br>
     <br>
-    <div id = "toppostinfo">
-        <p > is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been  it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was</p>
+    <div class = "toppostinfo">
+        <p >${it.description}</p>
     </div>
-    <a  id = "topviewpost" href = "www.google.com">View post</a>
+    <a  class = "topviewpost" href = "www.google.com">View post</a>
+    <br>
+    <br>
 </div>
+
+</g:each>
+</div>
+
 <div id = "Register">
 
     <div id = "registerheader">Register</div>
 
     <div id = "registerform">
 
-        <form action = "/user/registerUser" method = "POST">
+        <form action = "/user/registerUser" method = "POST" enctype="multipart/form-data">
 
             <label for = "firstname">First name</label>
             <br>
@@ -137,17 +157,17 @@
             <input type="password" name ="password" id = "registerpassword" placeholder="Enter your password" required>
             <br>
             <br>
-            <label for = "confirmpassword">Password</label>
+            <label for = "confirmpassword">confirm Password</label>
             <br>
-            <input type="text" name ="confirmpassword" id = "confirmpassword" placeholder="Confirm your password" required>
+            <input type="password" name ="confirmpassword" id = "confirmpassword" placeholder="Confirm your password" required>
             <br>
             <br>
             <label for = "userphoto">User Photo</label>
             <br>
-            <input type = "file" name = "phot" value id = "userphoto">
+            <input type = "file"  name = "image"  id = "userphoto">
             <br>
             <br>
-            <input type = "submit" value = "Register">
+            <input type = "submit" id = "registeruser" value = "Register">
         </form>
 
 
