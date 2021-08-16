@@ -15,13 +15,15 @@ class TopPostService {
             }
             groupProperty("resource");
         }
+        ///
+        ///l.sort({})
         Map resourceRating= [:]
         println "post--->>>"+l
         l.each{
             resourceRating.put(it[1],it[0]);
         }
         println "maptopPost---->>>> "+resourceRating
-        resourceRating.sort{it.value};
+        resourceRating = resourceRating.sort{it.value};
         List<Resource> toppost = [];
         resourceRating.each{
             toppost.push(it.key);

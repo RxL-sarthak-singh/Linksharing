@@ -14,24 +14,40 @@ body{
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgb(253 251 251);
 }
+.edits{
+    display :inline;
+    float:left;
+    width:80px;
+
+}
 .inbox{
     width :575px;
     float: left;
-    padding:10px;
-    overflow-y: scroll;
-    max-height: 300px;
-    scrollbar-color:indianred;
+
+
+
 }
 .inbox_info{
-   width: 550px;
+   width: 540px;
     border:3px solid indianred;
     height:140px;
     padding: 10px;
 
 }
+.boundary{
+    border:1px solid;
+}
 .inbox_info img{
     width: 120px;
     height: 120px;
+    padding:5px;
+    float:left;
+
+}
+
+.images{
+    width: 100px;
+    height: 100px;
     padding:5px;
     float:left;
 
@@ -137,9 +153,9 @@ a{
     border: 3px solid indianred;
     padding:20px;
     border-radius:10px;
-    position: absolute;
-    top:90px;
-    left:650px;
+    position: relative;
+    top:1rem;
+    left:6rem;
 
 
 
@@ -221,6 +237,9 @@ a{
     position: absolute;
     top:505px;
     left:20px;
+    overflow-y: scroll;
+    max-height: 386px;
+
 }
 .subscription_info{
     width :350px;
@@ -228,6 +247,8 @@ a{
     display:inline;
     border: 3px solid indianred;
     padding:20px;
+
+
 
 
 
@@ -244,15 +265,17 @@ a{
     padding-top: 5px;
     padding-left: 5px;
     position: absolute;
-    top:-25px;
-    left:0px;
+    top:480px;
+    left:20px;
 
 
 }
 #trending{
     position: absolute;
-    top:1275px;
+    top:950px;
     left:20px;
+    overflow-y: scroll;
+    max-height: 386px;
 
 
 
@@ -280,7 +303,7 @@ a{
     padding-top: 5px;
     padding-left: 5px;
     position: absolute;
-    top:1250px;
+    top:925px;
     left:20px;
 
 

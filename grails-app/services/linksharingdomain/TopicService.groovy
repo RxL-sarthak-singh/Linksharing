@@ -22,23 +22,24 @@ class TopicService {
             try {
                 Subscription creatorSubscription = new Subscription(subscriber: creator, seriousness: Seriousness.VERY_SERIOUS, topic: newTopic)
                 creatorSubscription.save(flush: true, failOnError: true)
+                msg = "ts"
 
             }
             catch (Exception e) {
 //                return "Topic created successfully but failed in creating creator's subscripition"
-                msg = "Topic created successfully but failed in creating creator's subscripition"
+                msg = "suberror"
 
             }
         }
         catch (Exception e) {
 //            return "failed in creating topic"
-            msg = "failed in creating topic"
+            msg = "te"
 
         }
-        msg = "Topic created successfully"
+
 
 //        return "Topic created successfully"
-        return newTopic
+        return msg
 
 
     }
@@ -46,7 +47,10 @@ class TopicService {
 
     def document(def request, def params,def user) {
 
-        println "params------->>>>>>>>>>>>> "+params
+        String des = params.description
+        if(des.length()>100){
+            return "Description is too long";
+        }
 
         Topic t = Topic.findByName(params.topics)
         println "topic---------->>>>>>>>>>> "+t.name
@@ -64,14 +68,14 @@ class TopicService {
 
             if (file && !file.empty) {
                 println "checking"
-                File file2 = new File("/home/rxlogix/IdeaProjects/LinkSharingdomain/grails-app/assets/Docfiles/${user.userName}.txt")
+                File file2 = new File("/home/rxlogix/IdeaProjects/LinkSharingdomain/grails-app/assets/Docfiles/${name}")
                 file.transferTo(file2);
 
 
 
             }
 
-            DocumentResource d = new DocumentResource(description: params.description, createdBy: user, topic: t,filePath: "/home/rxlogix/IdeaProjects/LinkSharingdomain/grails-app/assets/Docfiles/${user.userName}.txt");
+            DocumentResource d = new DocumentResource(description: params.description, createdBy: user, topic: t,filePath: "/home/rxlogix/IdeaProjects/LinkSharingdomain/grails-app/assets/Docfiles/${name}");
             try{
                 d.save(flush: true,failOnError:true)
                 ReadingItem ri = new ReadingItem(user:user,resource: d);
@@ -103,6 +107,10 @@ class TopicService {
 
 
         def link(Map params,User user){
+            String des = params.description
+            if(des.length()>100){
+                return "Description is too long";
+            }
             println "linktopic------>>>>> "+params.topics
             Topic t = Topic.findByName(params.topics)
             println "link----->>>>>> "+params.linkurl
@@ -122,11 +130,13 @@ class TopicService {
                     ri.errors.allErrors.each{
                         println it;
                     }
+                    return "error in adding link"
                 }
                 else{
                     ri.save(flush:true)
+                    return "Link resource added successfully"
                 }
-                return "Link resource added successfully"
+
 
 
             }

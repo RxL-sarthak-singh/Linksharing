@@ -1,6 +1,7 @@
 package linksharingdomain
 
 import grails.gorm.transactions.Transactional
+import linksharingdomain.enums.Visibility
 
 @Transactional
 class TrendingTopicsService {
@@ -13,7 +14,10 @@ class TrendingTopicsService {
         Map topicAndCountRes = [:]
 
         allTop.each{
-            topicAndCountRes.put(it,Resource.countByTopic(it))
+            if(it.visibility== Visibility.PUBLIC){
+                topicAndCountRes.put(it,Resource.countByTopic(it))
+            }
+
         }
         topicAndCountRes = topicAndCountRes.sort{it.value}
         println "map of topic and count---->>>>>> "+topicAndCountRes

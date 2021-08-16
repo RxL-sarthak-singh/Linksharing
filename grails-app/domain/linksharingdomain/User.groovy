@@ -14,6 +14,7 @@ class User {
     Date lastUpdated
     static transients = ["confirmPassword"]
     String photo;
+            String security;
     static hasMany = [topics:Topic,subscriptions:Subscription,resources:Resource,readingItems:ReadingItem]
 //    resourceRating check
 

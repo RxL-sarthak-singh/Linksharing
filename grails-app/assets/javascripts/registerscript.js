@@ -15,10 +15,20 @@ $(document).ready(function(){
                },
 
                success:function (response) {
-                   console.log(response)
+                   console.log(response.m)
                     closeCtopic();
-                     alert("topic added successfully")
-                  // $(".subscription_info").load(" .subscription_info")
+                   if(response.m=="suberror"||response.m=="te"){
+                       alert("Error in creating topic")
+                   }
+                   else if(response.m=="ts"){
+                       alert("Topic created successfully")
+                   }
+                   else{
+                       alert(response.m)
+                   }
+
+                   $("#subscriptionajax").load(" #subscriptionajax")
+                   $("#trendingajax").load(" #trendingajax")
 
                }
            })
@@ -33,33 +43,44 @@ $(document).ready(function(){
 });
 
 function closeForm() {
+    console.log("hello")
     document.querySelector(".bg-modal-link").style.display = "none"
     document.getElementById("sharelinkform").style.pointerEvents = "none";
 }
 
-function addlink(){
+function addlink() {
     console.log("button clicked");
     //console.log(u)
     $.ajax({
-        url:addlinkurl,
-        data:{
-            description:$("#linkdescription").val(),
-            linkurl:$("#Link").val(),
+        url: addlinkurl,
+        data: {
+            description: $("#linkdescription").val(),
+            linkurl: $("#Link").val(),
 
-            topics:$("#selectlinktopic").val()
+            topics: $("#selectlinktopic").val()
 
         },
-        success:function(response){
-            console.log(response);
+        success: function (response) {
+            console.log(response)
+            // console.log("link successfully created");
+             alert(response[0]);
+            $(".inbox").load(" .inbox")
+            $("#subscriptionajax").load(" #subscriptionajax")
+            $("#trendingajax").load(" #trendingajax")
             closeForm();
-            $(".inbox").load(" .inbox");
-            $(".trending_info").load(" .trending_info")
 
         }
-
-
     })
+
 }
+
+
+
+
+
+
+
+
 // function addDoc(){
 //     console.log("button clicked");
 //     //console.log(u)

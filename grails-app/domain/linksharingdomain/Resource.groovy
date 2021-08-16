@@ -10,6 +10,7 @@ class Resource {
     static belongsTo = [createdBy:User,topic:Topic]
 
     static constraints = {
+        description maxSize: 1000
     }
     static mapping={
         table "Res"

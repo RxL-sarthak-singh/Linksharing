@@ -13,6 +13,12 @@ class UserService {
         User x = User.findByEmail(params.email);
         String msg = "";
         Map map = ['user':x,'message':msg]
+        if(x==null){
+            map.message = "email doesn't exist"
+            return map;
+        }
+
+
         x.active=true
 
         if(x!= null){
@@ -35,7 +41,18 @@ class UserService {
 
     def register(def request, def params){
         User u1 = new User(params)
-        println params
+
+        if(params.password as String != params.confirmpassword as String){
+            return "cee"
+        }
+        println "register----->>>>"+params
+
+        if(User.findByUserName(params.userName)!=null){
+            return "ue";
+        }
+        if(User.findByEmail(params.email)!=null){
+            return "ee";
+        }
 
 
         def file = request.getFile('image')
@@ -70,6 +87,7 @@ class UserService {
             return "user successfully registered"
 
         } catch(Exception e){
+            println e
             return "user registration failed"
 
         }

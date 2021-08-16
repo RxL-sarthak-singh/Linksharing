@@ -5,6 +5,10 @@ function call(idx){
         var x = document.getElementById(allids[i])
         x.className+=" checked"
     }
+    for(var i=idx;i<5;i++){
+        var x = document.getElementById(allids[i])
+        x.className ="fa fa-star fa-2x"
+    }
 
 
 

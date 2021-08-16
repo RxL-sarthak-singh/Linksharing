@@ -9,8 +9,12 @@ class TopicController {
     def trendingTopicsService
 
     def index() {
+        if(session.user==null){
+            redirect(controller:"user",action:"index");
+            return;
+        }
         def email = params.usr
-        User u = User.findByEmail(email)
+        User u = session.user
 
         List<Subscription> s = Subscription.list();
         Map mp = [:]
@@ -55,24 +59,53 @@ class TopicController {
 //
 //        redirect(action: "index",params:[usr:session.user.email])
         println "ajax------>>>>>>> "+params.visibility
-        Topic t = topicService.create(session.user,params)
-        List li = []
-        li.add(t)
-        render(li as JSON)
+
+        if(Topic.findByCreatedByAndName(session.user,params.name)!=null){
+            String msg2 = "user can't create topic with same name"
+            render([m:msg2] as JSON)
+            return
+        }
+        else{
+            String msg = topicService.create(session.user,params)
+            Map li = [m:msg]
+            render(li as JSON)
+            return
+
+        }
+
+
 
 
     }
 
     def addDocument(){
-        render topicService.document(request,params,session.user)
+
+        Topic t = Topic.findByName(params.topics)
+        String msg = topicService.document(request,params,session.user)
+        readItemService.addreaditems(t,session.user)
+        if(msg.split(" ").last()=="successfully"){
+            flash.success = msg;
+        }
+        else{
+            flash.error = msg
+        }
+
+       redirect(action:"index",params: [usr:session.user.email])
     }
 
 
     def addLink(){
-        render topicService.link(params,session.user)
+        Topic t = Topic.findByName(params.topics)
+        String msg = topicService.link(params,session.user)
+        readItemService.addreaditems(t,session.user)
+        render ([msg] as JSON)
     }
 
     def aboutTopic(){
+        if(session.user==null){
+            redirect(controller:"user",action:"index");
+            return;
+        }
         Topic t = Topic.findById(params.id)
 
         println "topic name is----------->>>>>>>>>>> "+ t.name
@@ -91,9 +124,14 @@ class TopicController {
         topicService.download(response,params);
     }
     def aboutpost(){
+        if(session.user==null){
+            redirect(controller:"user",action:"index");
+            return;
+        }
         println "params------>>>>> "+params
         Resource r = topicService.getPost(params)
-        render view:"aboutpost",model:[resource:r];
+        List<Topic>trend = trendingTopicsService.trendingTopics()
+        render view:"aboutpost",model:[resource:r,trendingtopics:trend];
 
 
     }
@@ -101,7 +139,7 @@ class TopicController {
     def subscribeTopic(){
         Topic t = Topic.findById(params.id);
         Subscription s = new Subscription(topic:t,subscriber: session.user,seriousness:  Seriousness.VERY_SERIOUS);
-        readItemService.addreaditems(t,session.user);
+        readItemService.subaddreaditems(t,session.user);
         s.save(flush:true,failOnError:true);
 //        render "subscription successfull"
        redirect (action:"index",params:[usr:session.user.email])
@@ -115,5 +153,6 @@ class TopicController {
         redirect (action:"index",params:[usr:session.user.email])
 
     }
+
 
 }

@@ -14,13 +14,13 @@ class BootStrap {
 
     def createUser(){
         User u1 = new User(firstName: "Sarthak",lastName: "singh",userName: "sarthakx",password: "1234"
-                ,email: "sarthak@gmail.com",admin:"false",active: "true",photo: "/profile/sarthakx.jpg")
+                ,email: "sarthak@gmail.com",admin:"true",active: "true",photo: "/profile/sarthakx.jpg",security:  "kheerganga")
         User u2 = new User(firstName: "naman",lastName: "jain",userName: "namanx",password: "1234"
-                ,email: "naman@gmail.com",admin:"false",active: "true",photo: "/profile/naman.jpeg")
+                ,email: "naman@gmail.com",admin:"false",active: "true",photo: "/profile/naman.jpeg",security: "diggin")
         User u3 = new User(firstName: "tom",lastName: "cruise",userName: "tomcruisex",password: "1234"
-                ,email: "tomcruise@gmail.com",admin:"false",active: "true",photo:"/profile/tomcruisex.jpg")
+                ,email: "tomcruise@gmail.com",admin:"false",active: "true",photo:"/profile/tomcruisex.jpg",security: "hollywood")
         User u4 = new User(firstName: "dhruv",lastName: "rathore",userName: "dhruvx",password: "1234"
-                ,email: "dhruv@gmail.com",admin:"false",active: "true",photo:"/profile/dhruvrathorex.jpg")
+                ,email: "dhruv@gmail.com",admin:"false",active: "true",photo:"/profile/dhruvrathorex.jpg",security: "zoo")
         u1.save(flush:true)
         u2.save(flush:true)
         u3.save(flush:true)

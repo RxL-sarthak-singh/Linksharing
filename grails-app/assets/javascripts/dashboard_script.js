@@ -31,6 +31,7 @@ function closeCtopic() {
     document.getElementById("createtopic").style.pointerEvents = "none";
 }
 function openInvite() {
+    console.log("INVITE")
     document.querySelector(".bg-modal-invite").style.display = "flex"
    //document.getElementById("sendinvitation").style.display = "block";
     document.getElementById("sendinvitation").style.pointerEvents = "auto";

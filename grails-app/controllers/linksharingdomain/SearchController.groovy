@@ -3,12 +3,20 @@ package linksharingdomain
 import linksharingdomain.enums.Visibility
 
 class SearchController {
+    def trendingTopicsService
+    def topPostService
 
     def index() { }
     def searchpost(String str){
+        if(session.user==null){
+            redirect(controller:"user",action:"index");
+            return;
+        }
         List<Topic> l = Topic.list();
         List<Resource> matchingres = []
         println "searchstring---->>>>>"+params.searchtext
+        List<Topic> trend = trendingTopicsService.trendingTopics()
+        List<Resource>top = topPostService.topPost()
 
         l.each{
 
@@ -36,8 +44,8 @@ class SearchController {
             }
 
         }
-        println matchingres
-        render view:"search",model:[matchingresources:matchingres];
+        println "search----->>>>> "+ matchingres
+        render view:"search",model:[matchingresources:matchingres,searchtext:params.searchtext,trendintopics:trend,topPost:top];
 
 
     }

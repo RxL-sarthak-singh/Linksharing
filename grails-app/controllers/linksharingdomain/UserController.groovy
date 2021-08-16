@@ -12,9 +12,15 @@ class UserController {
     def topPostService
 
     def index() {
-        List<Resource>toppost = topPostService.topPost()
-        println "toppost------>>>>"+toppost;
-        render view:'index',model:[toppostlist:toppost]
+        if(session.user){
+            redirect(controller:"topic",action:"index",use:session.user.email);
+        }
+        else{
+            List<Resource>toppost = topPostService.topPost()
+            println "toppost------>>>>"+toppost;
+            render view:'index',model:[toppostlist:toppost]
+        }
+
 
     }
 
@@ -37,10 +43,12 @@ class UserController {
 
          }
         else if(mp.message.split(" ")[0]=="Wrong"){
-             render mp.message
+             flash.error = mp.message
+             redirect(action:"index")
          }
         else{
-             render "email doesn't exist"
+             flash.error = mp.message
+             redirect(action:"index")
          }
 
 
@@ -51,14 +59,36 @@ class UserController {
 
     def registerUser(){
         String msg = userService.register(request,params)
+        println "msg------>>>>>>> "+msg
+        if(msg=="cee"){
+            flash.error = "confirm password and password field doesn't match";
+            redirect(actionName:"index")
+            return
+        }
+
+        if(msg=="ee"){
+            flash.error = "Email ID already exists"
+            redirect(actionName:"index")
+            return
+        }
+        if(msg=="ue"){
+            flash.error = "Username already exists"
+            redirect(actionName:"index")
+            return
+        }
         if(msg.split(" ")[1]=="successfully"){
 
 
             flash.success = "user successfully registered"
+            redirect(actionName:"index")
+            return
 
         }
+
         else{
             flash.error = "user registration failed"
+            redirect(actionName:"index")
+            return
 
         }
         redirect(actionName:"index")
@@ -96,12 +126,39 @@ class UserController {
     def privateProfile(){
         render view:"getProfile"
     }
-    def editProfile(){
-        User u = User.get(session.user.id)
+    def editProfile(request,params){
+        User u = session.user
+        println "getProfile username ---->>> "+params.userName
+        if(User.findByUserName(params.userName)!=null){
+            flash.error = "Username already in use";
+            render view:"getProfile"
+            return
+        }
+
         u.userName = params.userName
         u.firstName = params.firstName
         u.lastName = params.secondName
-        u.save(flush:true,failOnError:true)
+
+
+            def file = request.getFile('image')
+
+            def name = file.getOriginalFilename()
+            println "file is " + name
+            if (file && !file.empty) {
+                File file2 = new File("/home/rxlogix/IdeaProjects/LinkSharingdomain/grails-app/assets/images/profile/${params.userName}.jpg")
+                file.transferTo(file2);
+                println(file2.path)
+                u.photo = "/profile/${params.userName}.jpg"
+            }
+        try{
+            flash.success = "Information updated"
+            u.save(flush:true,failOnError:true)
+
+        }
+        catch(Exception e){
+            println "EXCEPTION IS ___>>>>>>>>>___<>>><>>>"+e
+        }
+
 
         render view:"getProfile"
     }

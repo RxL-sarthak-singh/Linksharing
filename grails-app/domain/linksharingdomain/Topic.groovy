@@ -11,9 +11,12 @@ class Topic {
 //  createdBy user
 //  resources
     static belongsTo = [createdBy:User]
-    static hasMany = [resources:Resource]
+    static hasMany = [resources:Resource,subscriptions:Subscription]
 
 //  enum visibility
+//    static mapping = {
+//        id composite :[name,createdBy]
+//    }
     static constraints = {
         name blank: false
     }
